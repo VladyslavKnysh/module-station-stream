@@ -58,8 +58,8 @@
                 : Edrys.module.stationConfig?.audio,
             rotation:
               Edrys.module.stationConfig?.rotation === undefined
-                ? document.getElementById('rotation').value = 0
-                : document.getElementById('rotation').value = Edrys.module.stationConfig?.rotation,
+                ? document.getElementById('rotation').innerHTML = 0
+                : document.getElementById('rotation').innerHTML = Edrys.module.stationConfig?.rotation,
           },
           (e) => {
             stream = e
@@ -145,7 +145,7 @@
       }
 
       video {
-        transform: rotate((document.getElementById('rotation').value= rotation())deg);
+        transform: rotate(90);
         max-width: 100%;
         max-height: 100%;
         width: auto;

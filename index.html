@@ -51,6 +51,10 @@
               Edrys.module.stationConfig?.audio === undefined
                 ? true
                 : Edrys.module.stationConfig?.audio,
+            rotation:
+              Edrys.module.stationConfig?.rotation === undefined
+                ? 0
+                : Edrys.module.stationConfig?.rotation,
           },
           (e) => {
             stream = e
@@ -136,6 +140,7 @@
       }
 
       video {
+        transform: rotate((getUserMedia.rotation));
         max-width: 100%;
         max-height: 100%;
         width: auto;

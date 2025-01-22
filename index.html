@@ -59,7 +59,7 @@
             rotation:
               Edrys.module.stationConfig?.rotation === undefined
                 ? document.getElementById('rotation').value = 0
-                : document.getElementById('rotation').value = Edrys.module.stationConfig?.rotation;
+                : document.getElementById('rotation').value = Edrys.module.stationConfig?.rotation,
           },
           (e) => {
             stream = e

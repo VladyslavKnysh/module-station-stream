@@ -25,11 +25,11 @@
     />
 
     <script>
-      var rotation = function(){
-        Edrys.module.stationConfig?.rotation === undefined
-                ? return 0
-                : return Edrys.module.stationConfig?.rotation;
-      }
+      // var rotation = function(){
+      //   Edrys.module.stationConfig?.rotation === undefined
+      //           ? return 0
+      //           : return Edrys.module.stationConfig?.rotation;
+      // }
       function getServerID() {
         return btoa(Edrys.class_id + Edrys.liveUser.room)
       }
@@ -58,8 +58,8 @@
                 : Edrys.module.stationConfig?.audio,
             rotation:
               Edrys.module.stationConfig?.rotation === undefined
-                ? return 0
-                : return Edrys.module.stationConfig?.rotation;
+                ? document.getElementById('rotation').value = 0
+                : document.getElementById('rotation').value = Edrys.module.stationConfig?.rotation;
           },
           (e) => {
             stream = e
@@ -145,7 +145,7 @@
       }
 
       video {
-        transform: rotate(document.getElementById('rotation').value = rotation());
+        transform: rotate(document.getElementById('rotation').value);
         max-width: 100%;
         max-height: 100%;
         width: auto;

@@ -25,11 +25,11 @@
     />
 <input type="hidden" id="rotation" />
     <script>
-      // var rotation = function(){
-      //   Edrys.module.stationConfig?.rotation === undefined
-      //           ? return 0
-      //           : return Edrys.module.stationConfig?.rotation;
-      // }
+      var rotation = function(){
+        Edrys.module.stationConfig?.rotation === undefined
+                ? return 0
+                : return Edrys.module.stationConfig?.rotation;
+      }
       function getServerID() {
         return btoa(Edrys.class_id + Edrys.liveUser.room)
       }
@@ -145,7 +145,7 @@
       }
 
       video {
-        transform: rotate((document.getElementById('rotation').value)deg);
+        transform: rotate((document.getElementById('rotation').value= rotation())deg);
         max-width: 100%;
         max-height: 100%;
         width: auto;

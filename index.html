@@ -25,6 +25,11 @@
     />
 
     <script>
+      var rotation = function(){
+        Edrys.module.stationConfig?.rotation === undefined
+                ? return 0
+                : return Edrys.module.stationConfig?.rotation;
+      }
       function getServerID() {
         return btoa(Edrys.class_id + Edrys.liveUser.room)
       }
@@ -52,9 +57,7 @@
                 ? true
                 : Edrys.module.stationConfig?.audio,
             rotation:
-              Edrys.module.stationConfig?.rotation === undefined
-                ? 0
-                : Edrys.module.stationConfig?.rotation,
+              
           },
           (e) => {
             stream = e
@@ -117,13 +120,13 @@
         }
       })
     </script>
-
+<input type="hidden" name="rotation" id="rotation" />
     <style>
      body {
         margin: 0;
         padding: 0;
         max-width: unset;
-        height: 100vh; /* Full viewport height */
+        height: unset; /*100vh; Full viewport height */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -140,7 +143,7 @@
       }
 
       video {
-        transform: rotate(90deg);
+        transform: rotate(document.getElementById('rotation').value = rotation());
         max-width: 100%;
         max-height: 100%;
         width: auto;

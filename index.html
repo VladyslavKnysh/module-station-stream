@@ -57,7 +57,9 @@
                 ? true
                 : Edrys.module.stationConfig?.audio,
             rotation:
-              
+              Edrys.module.stationConfig?.rotation === undefined
+                ? return 0
+                : return Edrys.module.stationConfig?.rotation;
           },
           (e) => {
             stream = e
